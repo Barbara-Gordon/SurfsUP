@@ -11,7 +11,7 @@ def welcome():
 
 @app.route("/api/v1.0/precipitation")
 def make_it_rain():
-    conn = sqlite3.connect("c://Users//enc82//Documents//Github//Surfs_UP//Resources//hawaii.sqlite")
+    conn = sqlite3.connect("c://Users//enc82//Documents//Github//SurfsUP//Resources//hawaii.sqlite")
     cur = conn.cursor()
 
     cur.execute('SELECT date, prcp FROM measurement')
@@ -24,7 +24,7 @@ def make_it_rain():
 
 @app.route("/api/v1.0/stations")
 def stations():
-    conn = sqlite3.connect("c://Users//enc82//Documents//Github//Surfs_UP//Resources//hawaii.sqlite")
+    conn = sqlite3.connect("c://Users//enc82//Documents//Github//SurfsUP//Resources//hawaii.sqlite")
     cur = conn.cursor()
     
     cur.execute('SELECT * FROM station')
@@ -37,7 +37,7 @@ def stations():
 
 @app.route("/api/v1.0/tobs")
 def hot_in_hurr():
-    conn = sqlite3.connect("c://Users//enc82//Documents//Github//Surfs_UP//Resources//hawaii.sqlite")
+    conn = sqlite3.connect("c://Users//enc82//Documents//Github//SurfsUP//Resources//hawaii.sqlite")
     cur = conn.cursor()
     cur.execute('SELECT date, tobs FROM measurement order by date DESC limit 365')
     rows = cur.fetchall()
@@ -52,7 +52,7 @@ def hot_in_hurr():
 
 @app.route("/api/v1.0/<start>")
 def MMA_Temps(start):
-    conn = sqlite3.connect("c://Users//enc82//Documents//Github//Surfs_UP//Resources//hawaii.sqlite")
+    conn = sqlite3.connect("c://Users//enc82//Documents//Github//SurfsUP//Resources//hawaii.sqlite")
     cur = conn.cursor()
 
     start = str(start)
@@ -70,7 +70,7 @@ def MMA_Temps(start):
 
 @app.route("/api/v1.0/<start>/<end>")
 def vacation_Temps(start,end):
-    conn = sqlite3.connect("c://Users//enc82//Documents//Github//Surfs_UP//Resources//hawaii.sqlite")
+    conn = sqlite3.connect("c://Users//enc82//Documents//Github//SurfsUP//Resources//hawaii.sqlite")
     cur = conn.cursor()
 
     start = str(start)
